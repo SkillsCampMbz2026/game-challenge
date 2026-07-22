@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lights Out | Game Challenge</title>
+  <meta name="description" content="Play Lights Out in your browser. Turn off every light on a 5x5 grid in as few moves as possible." />
+  <link rel="stylesheet" href="../../assets/site.css" />
+  <link rel="stylesheet" href="lights-out.css" />
+</head>
+<body>
+  <div class="lights-page">
+    <a class="back-link" href="../../index.html">&larr; Back to Game Challenge menu</a>
+
+    <header class="site-header lights-header">
+      <h1>Lights Out</h1>
+      <p>Turn off every light on the 5&times;5 grid in as few moves as possible.</p>
+    </header>
+
+    <details class="instructions" open>
+      <summary>How to play</summary>
+      <ul>
+        <li>The board is a <strong>5&times;5 grid</strong> of lights, each either <strong>on</strong> or <strong>off</strong>.</li>
+        <li>Clicking a light <strong>toggles that light</strong> and its <strong>direct neighbors</strong> above, below, left and right (if they exist).</li>
+        <li>The goal is to get <strong>every light off</strong> using as few clicks as possible.</li>
+        <li>Every puzzle is randomly generated but <strong>guaranteed solvable</strong>.</li>
+        <li>Use keyboard <strong>Tab</strong> and <strong>Enter/Space</strong> to play without a mouse.</li>
+      </ul>
+    </details>
+
+    <section class="controls" aria-label="Game controls">
+      <div class="stat">
+        <span class="stat-label">Your moves</span>
+        <span class="stat-value" id="move-count">0</span>
+      </div>
+
+      <button id="restart-btn" type="button" class="restart-btn">New puzzle</button>
+    </section>
+
+    <p class="status-line" id="status-line" role="status" aria-live="polite">
+      Click a light to start toggling.
+    </p>
+
+    <main class="lights-board" id="lights-board" role="grid" aria-label="Lights Out grid, 5 by 5"></main>
+  </div>
+
+  <div class="victory-overlay" id="victory-overlay" hidden>
+    <div class="victory-card" role="dialog" aria-modal="true" aria-labelledby="victory-title">
+      <h2 id="victory-title">💡 Lights out!</h2>
+      <p id="victory-message"></p>
+      <div class="victory-actions">
+        <button id="victory-again-btn" type="button" class="restart-btn">Play again</button>
+        <a href="../../index.html" class="menu-link">Back to menu</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="lights-out.js"></script>
+</body>
+</html>

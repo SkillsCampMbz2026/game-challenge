@@ -211,64 +211,6 @@
   cursor: grabbing;
 }
 
-.victory-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(2, 6, 23, 0.72);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  z-index: 100;
-}
-
-.victory-overlay[hidden] {
-  display: none;
-}
-
-.victory-card {
-  background: #111827;
-  border: 1px solid var(--panel-border);
-  border-radius: 18px;
-  padding: 32px;
-  max-width: 420px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-}
-
-.victory-card h2 {
-  margin-top: 0;
-  font-size: 1.8rem;
-}
-
-.victory-card p {
-  color: var(--text-dim);
-  line-height: 1.6;
-  font-size: 1.05rem;
-}
-
-.victory-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.menu-link {
-  color: var(--text);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid var(--panel-border);
-  font-weight: 600;
-}
-
-.menu-link:hover {
-  border-color: var(--accent);
-}
-
 @media (max-width: 640px) {
   .board {
     padding: 16px 6px 12px;
