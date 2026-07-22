@@ -1,0 +1,143 @@
+:root {
+  --bg-1: #1e1b4b;
+  --bg-2: #0f172a;
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-border: rgba(255, 255, 255, 0.12);
+  --accent: #818cf8;
+  --accent-2: #34d399;
+  --text: #f1f5f9;
+  --text-dim: #94a3b8;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at 20% 10%, var(--bg-1), var(--bg-2) 60%);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 48px;
+}
+
+.site-header {
+  width: 100%;
+  max-width: 960px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.site-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 8px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.site-header p {
+  color: var(--text-dim);
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.game-grid {
+  width: 100%;
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.game-card:not(.disabled):hover,
+.game-card:not(.disabled):focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.game-card .icon {
+  font-size: 2.2rem;
+}
+
+.game-card h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.game-card p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--accent-2);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+.game-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.game-card.disabled .badge {
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--text-dim);
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.back-link {
+  align-self: flex-start;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+footer.site-footer {
+  margin-top: 40px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-align: center;
+}

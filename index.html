@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Challenge Menu</title>
+  <meta name="description" content="A collection of browser puzzle challenges, starting with Tower of Hanoi." />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Game Challenge</h1>
+    <p>Pick a puzzle to play. More challenges are on the way.</p>
+  </header>
+
+  <main class="game-grid">
+    <a class="game-card" href="games/tower-of-hanoi/index.html">
+      <span class="icon">🗼</span>
+      <span class="badge">Available</span>
+      <h2>Tower of Hanoi</h2>
+      <p>Move the whole stack from one tower to another, one disk at a time, without ever placing a larger disk on a smaller one.</p>
+    </a>
+
+    <div class="game-card disabled" aria-disabled="true">
+      <span class="icon">🧩</span>
+      <span class="badge">Coming soon</span>
+      <h2>More Challenges</h2>
+      <p>Additional puzzle games will appear here in future updates.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Built with HTML, CSS &amp; JavaScript.
+  </footer>
+</body>
+</html>

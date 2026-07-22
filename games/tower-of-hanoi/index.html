@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tower of Hanoi | Game Challenge</title>
+  <meta name="description" content="Play Tower of Hanoi in your browser. Choose your disk count, track your moves, and beat the minimum!" />
+  <link rel="stylesheet" href="../../assets/site.css" />
+  <link rel="stylesheet" href="hanoi.css" />
+</head>
+<body>
+  <div class="hanoi-page">
+    <a class="back-link" href="../../index.html">&larr; Back to Game Challenge menu</a>
+
+    <header class="site-header hanoi-header">
+      <h1>Tower of Hanoi</h1>
+      <p>Move every disk from the left tower to the right tower, one at a time.</p>
+    </header>
+
+    <details class="instructions" open>
+      <summary>How to play</summary>
+      <ul>
+        <li>The goal is to move the entire stack of disks from <strong>Tower A</strong> to <strong>Tower C</strong>.</li>
+        <li>You may only move <strong>one disk at a time</strong>, and only the <strong>top disk</strong> of a tower.</li>
+        <li>A disk can never be placed on top of a <strong>smaller</strong> disk.</li>
+        <li>To move a disk: <strong>click</strong> a tower to pick up its top disk, then click another tower to drop it there &mdash; or simply <strong>drag</strong> the top disk to another tower.</li>
+        <li>Try to solve it in the <strong>minimum number of moves</strong> shown below!</li>
+      </ul>
+    </details>
+
+    <section class="controls" aria-label="Game controls">
+      <div class="control-group">
+        <label for="disk-count">Number of disks</label>
+        <select id="disk-count"></select>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Minimum possible moves</span>
+        <span class="stat-value" id="min-moves">0</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Your moves</span>
+        <span class="stat-value" id="move-count">0</span>
+      </div>
+
+      <button id="restart-btn" type="button" class="restart-btn">Restart</button>
+    </section>
+
+    <p class="status-line" id="status-line" role="status" aria-live="polite">
+      Select a disk to begin.
+    </p>
+
+    <main class="board" id="board">
+      <div class="peg-wrapper" data-peg="0" tabindex="0" role="button" aria-label="Tower A">
+        <div class="peg-label">A</div>
+        <div class="peg" id="peg-0">
+          <div class="rod"></div>
+          <div class="base"></div>
+        </div>
+      </div>
+      <div class="peg-wrapper" data-peg="1" tabindex="0" role="button" aria-label="Tower B">
+        <div class="peg-label">B</div>
+        <div class="peg" id="peg-1">
+          <div class="rod"></div>
+          <div class="base"></div>
+        </div>
+      </div>
+      <div class="peg-wrapper" data-peg="2" tabindex="0" role="button" aria-label="Tower C">
+        <div class="peg-label">C</div>
+        <div class="peg" id="peg-2">
+          <div class="rod"></div>
+          <div class="base"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="victory-overlay" id="victory-overlay" hidden>
+    <div class="victory-card" role="dialog" aria-modal="true" aria-labelledby="victory-title">
+      <h2 id="victory-title">🎉 Solved it!</h2>
+      <p id="victory-message"></p>
+      <div class="victory-actions">
+        <button id="victory-again-btn" type="button" class="restart-btn">Play again</button>
+        <a href="../../index.html" class="menu-link">Back to menu</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="hanoi.js"></script>
+</body>
+</html>
