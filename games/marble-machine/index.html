@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marble Machine | Game Challenge</title>
+  <meta name="description" content="Build a contraption of ramps, platforms and springs to guide a ball into the target basket." />
+  <link rel="stylesheet" href="../../assets/site.css" />
+  <link rel="stylesheet" href="marble-machine.css" />
+</head>
+<body>
+  <div class="marble-page">
+    <a class="back-link" href="../../index.html">&larr; Back to Game Challenge menu</a>
+
+    <header class="site-header marble-header">
+      <h1>Marble Machine</h1>
+      <p>Place ramps, platforms and springs so the ball rolls into the basket.</p>
+    </header>
+
+    <details class="instructions" open>
+      <summary>How to play</summary>
+      <ul>
+        <li>The ball starts at the <strong>flag</strong> in the top-left and falls with gravity.</li>
+        <li>Your job: build a path of <strong>ramps</strong>, <strong>platforms</strong> and <strong>springs</strong> that steers it into the green <strong>basket</strong>.</li>
+        <li><strong>Drag</strong> a part from the tray onto an empty cell &mdash; or <strong>click</strong> a part in the tray to arm it, then <strong>click</strong> an empty cell to place it.</li>
+        <li><strong>Click</strong> any placed part to remove it and return it to the tray. Each part type has a <strong>limited</strong> supply.</li>
+        <li>Ramps redirect a falling ball sideways. Platforms are flat rests. Springs give the ball an extra <strong>bounce</strong>.</li>
+        <li>Press <strong>Run</strong> to start the simulation. If the ball misses, tweak your contraption and run it again. <strong>Reset</strong> clears everything.</li>
+        <li>Keyboard: <strong>Tab</strong> to a part then <strong>Enter</strong> to arm it; <strong>Tab</strong> to the board, use <strong>arrow keys</strong> to move the cursor and <strong>Enter</strong> to place or remove.</li>
+      </ul>
+    </details>
+
+    <section class="tray" id="tray" aria-label="Available parts">
+      <button type="button" class="part-chip" data-part="ramp-right">
+        <span class="chip-icon ramp-right-icon" aria-hidden="true"></span>
+        <span class="chip-label">Ramp &#10554;</span>
+        <span class="chip-count" id="count-ramp-right">4</span>
+      </button>
+      <button type="button" class="part-chip" data-part="ramp-left">
+        <span class="chip-icon ramp-left-icon" aria-hidden="true"></span>
+        <span class="chip-label">Ramp &#10555;</span>
+        <span class="chip-count" id="count-ramp-left">4</span>
+      </button>
+      <button type="button" class="part-chip" data-part="platform">
+        <span class="chip-icon platform-icon" aria-hidden="true"></span>
+        <span class="chip-label">Platform</span>
+        <span class="chip-count" id="count-platform">3</span>
+      </button>
+      <button type="button" class="part-chip" data-part="spring">
+        <span class="chip-icon spring-icon" aria-hidden="true"></span>
+        <span class="chip-label">Spring</span>
+        <span class="chip-count" id="count-spring">2</span>
+      </button>
+    </section>
+
+    <section class="controls" aria-label="Game controls">
+      <div class="stat">
+        <span class="stat-label">Parts placed</span>
+        <span class="stat-value" id="parts-placed">0</span>
+      </div>
+      <button id="run-btn" type="button" class="restart-btn run-btn">&#9654; Run</button>
+      <button id="reset-btn" type="button" class="restart-btn">Reset</button>
+    </section>
+
+    <p class="status-line" id="status-line" role="status" aria-live="polite">
+      Drag parts onto the board to build your contraption.
+    </p>
+
+    <main class="board-wrap">
+      <canvas id="board" class="board-canvas" tabindex="0" width="480" height="400" aria-label="Marble machine board, use arrow keys to move the placement cursor and Enter to place or remove a part"></canvas>
+    </main>
+  </div>
+
+  <div class="victory-overlay" id="victory-overlay" hidden>
+    <div class="victory-card" role="dialog" aria-modal="true" aria-labelledby="victory-title">
+      <h2 id="victory-title">🎯 Nailed it!</h2>
+      <p id="victory-message"></p>
+      <div class="victory-actions">
+        <button id="victory-again-btn" type="button" class="restart-btn">Play again</button>
+        <a href="../../index.html" class="menu-link">Back to menu</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="marble-machine.js"></script>
+</body>
+</html>
